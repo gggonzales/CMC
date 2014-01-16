@@ -1,0 +1,12 @@
+[global]
+ApplicationName=CMC
+DevToolsEndpoint=git.elasticbeanstalk.us-west-2.amazonaws.com
+EnvironmentName=CMC-Staging
+EnvironmentType=SingleInstance
+InstanceProfileName=aws-elasticbeanstalk-ec2-role
+OptionSettingFile=C:\Users\GREECOS_02\Documents\GitHub\CMC\.elasticbeanstalk\optionsettings.CMC-Staging
+RdsEnabled=No
+Region=us-west-2
+ServiceEndpoint=https://elasticbeanstalk.us-west-2.amazonaws.com
+SolutionStack=64bit Amazon Linux 2013.09 running PHP 5.5
+
