@@ -100,10 +100,11 @@ $image_url = wp_get_attachment_image_src($image_id, 'large', true);
 			  'showposts' => 1,
 			  'caller_get_posts'=> 1
 			);
-			$pages = get_posts($args);		
-			echo apply_filters('the_content',$pages[0]->post_content);
+			$pagesObj = get_posts($args);		
+			echo apply_filters('the_content',$pagesObj[0]->post_content);
 			?>
 			<div class="challenge_category">
+			
 			<?php 
 					$args = array('numberposts' => '20', 'category_name' => 'pit' , 'orderby' => 'date', 'order'=>'ASC' );
 					$pits = get_posts( $args );

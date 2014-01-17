@@ -22,10 +22,42 @@ get_header();
             jQuery("#"+li_id+"_div").show();
         });
         
+		
+		
     });
     
  </script>   
-<div class="banner_inner overviewimg height280"><?php  
+ <script type="text/javascript">
+		jQuery(document).ready(function() {
+            jQuery('#event_location_1').tooltipster({
+                content: jQuery("<h2>TRI-STATE MOUNTAIN ASSAULT '12</h2><p>Apr 12, 2014</p><p>Camelback Mountain, PA</p><a href='#' class='register_popup_btn'></a>"),
+				interactive:true
+            });			
+			jQuery('#event_location_2').tooltipster({
+                content: jQuery("<h2>Lorem Ipsum Dolor '13</h2><p>Apr 14, 2014</p><p>Angeles City, PA</p><a href='#' class='register_popup_btn'></a>"),
+				interactive:true
+            });			
+			jQuery('#event_location_3').tooltipster({
+                content: jQuery("<h2>The Examination License '13</h2><p>Apr 14, 2014</p><p>NJ, USA, PA</p><a href='#' class='register_popup_btn'></a>"),
+				interactive:true
+            });
+			jQuery('#event_location_4').tooltipster({
+                content: jQuery("<h2>The Examination License '13</h2><p>Apr 14, 2014</p><p>NJ, USA, PA</p><a href='#' class='register_popup_btn'></a>"),
+				interactive:true
+            });
+			jQuery('#event_location_5').tooltipster({
+                content: jQuery("<h2>The Examination License '13</h2><p>Apr 14, 2014</p><p>NJ, USA, PA</p><a href='#' class='register_popup_btn'></a>"),
+				interactive:true
+            });
+        });
+</script>
+<div class="banner_inner overviewimg height378">
+<div id="event_location_1" class="marker" style="right: 383px;top: 192px;"></div>
+<div id="event_location_2" class="marker" style="right: 265px;top: 187px;"></div>
+<div id="event_location_3" class="marker" style="right: 301px;top: 242px;"></div>
+<div id="event_location_4" class="marker" style="right: 231px;top: 227px;"></div>
+<div id="event_location_5" class="marker" style="right: 173px;top: 21px;"></div>
+<?php  
  
 $post_thumbnail_id = get_post_thumbnail_id( $post->ID );
         $image_attributes = wp_get_attachment_image_src($post_thumbnail_id,'large');
@@ -41,16 +73,13 @@ $post_thumbnail_id = get_post_thumbnail_id( $post->ID );
     </div>
   </div>
 </div>
-<div class="inner_mid">
+<div class="inner_mid mid-active">
   <div class="inner_mid_inner">
     <ul class="eventlinks">
         <li class="current" id="upcoming_events"><a href="javascript:void(0);">UPCOMING EVENTS</a></li>
         <li id="past_events"><a href="javascript:void(0);">PAST EVENTS</a></li>
     </ul>
     <div class="event_list_heading">
-      <div class="event_block1">
-        <h2>EVENT</h2>
-      </div>
       <div class="course_block">
         <h2>COURSE</h2>
       </div>
@@ -122,15 +151,7 @@ $post_thumbnail_id = get_post_thumbnail_id( $post->ID );
     <div class="event_list_row">
        
         <div onclick="location.href='<?php echo get_permalink($post->ID); ?>';" style="cursor: pointer;">  
-      <div class="event_block1">
-        <div class="floatleft padl15">
-            <a href="<?php echo get_permalink($post->ID); ?>">
-                <img src="<?php echo z_taxonomy_image_url($term_list[0]->term_id);?>" alt="<?php echo  (get_the_title()); ?>" 
-              title="<?php echo  (get_the_title()); ?>"  width="94" height="80" />
-         
-     </a>
-            </div>
-      </div>
+      
       <div class="course_block">
           <h3> <a href="<?php echo get_permalink($post->ID); ?>" style="text-decoration: none; color:black;"><?php echo  (get_the_title()); ?></a></h3>
       </div>
@@ -138,11 +159,11 @@ $post_thumbnail_id = get_post_thumbnail_id( $post->ID );
         <h3><a href="<?php echo get_permalink($post->ID); ?>" style="text-decoration: none; color:black;"><?php echo nl2br($values['event_location'][0] )?></a></h3>
       </div>
       <div class="date_block">
-        <h3><a href="<?php echo get_permalink($post->ID); ?>" style="text-decoration: none; color:black;"><?php  echo date("M d,",$unix);?><br />
+        <h3><a href="<?php echo get_permalink($post->ID); ?>" style="text-decoration: none; color:black;"><?php  echo date("M d,",$unix);?>
           <?php  echo date("Y",$unix);?></a></h3>
       </div> 
       </div>
-      <div class="floatleft padt20"><a class="register_btn" href="<?php echo get_permalink($post->ID); ?>"></a></div>
+      <div class="floatleft padt20"><a class="register_btn" href="<?php echo get_permalink($post->ID); ?>">Register</a></div>
       <div class="clear"></div>
     </div>
   <?php  
@@ -197,16 +218,6 @@ $post_thumbnail_id = get_post_thumbnail_id( $post->ID );
     <div class="event_list_row">
         
       <div onclick="location.href='<?php echo get_permalink($post->ID); ?>';" style="cursor: pointer;">
-      <div class="event_block1">
-        <div class="floatleft padl15">
-            <a href="<?php echo get_permalink($post->ID); ?>">
-         <img src="<?php echo z_taxonomy_image_url($term_list[0]->term_id);?>" 
-              alt="<?php echo  (get_the_title()); ?>" 
-              title="<?php echo  (get_the_title()); ?>" 
-                width="94" height="80"/>
-     </a>
-            </div>
-      </div>
       <div class="course_block">
         <h3> <a href="<?php echo get_permalink($post->ID); ?>" style="text-decoration: none; color:black;"><?php echo  (get_the_title()); ?></a></h3>
       </div>
@@ -214,11 +225,11 @@ $post_thumbnail_id = get_post_thumbnail_id( $post->ID );
         <h3> <a href="<?php echo get_permalink($post->ID); ?>" style="text-decoration: none; color:black;"><?php echo nl2br($values['event_location'][0] )?></a></h3>
       </div>
       <div class="date_block">
-        <h3> <a href="<?php echo get_permalink($post->ID); ?>" style="text-decoration: none; color:black;"><?php  echo date("M d,",$unix);?><br />
+        <h3> <a href="<?php echo get_permalink($post->ID); ?>" style="text-decoration: none; color:black;"><?php  echo date("M d,",$unix);?>
           <?php  echo date("Y",$unix);?></a></h3>
       </div> 
       </div>  
-      <div class="floatleft padt20"><a class="result_btn" href="<?php echo get_permalink($post->ID); ?>"></a></div>
+      <div class="floatleft padt20"><a class="result_btn" href="<?php echo get_permalink($post->ID); ?>">Result</a></div>
       <div class="clear"></div>
     </div>
   <?php  
@@ -230,6 +241,9 @@ $post_thumbnail_id = get_post_thumbnail_id( $post->ID );
 	 wp_reset_query();
          ?> 
       </div> 
+	  <a href="#" class="load_more">
+		<img src="<?php bloginfo('template_url') ?>/images/load_more_icon.jpg" alt="Load More" />
+	  </a>
   </div>
 </div>
 </div>

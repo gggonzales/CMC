@@ -117,6 +117,11 @@
     		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   	})();
 </script>
+
+
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/tooltipster.css" media="screen" />
+<script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/jquery.tooltipster.js"></script>
+
 </head>
 <?php if(isset($_GET['mq'])) { ?>
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/mq.css" media="screen" />
