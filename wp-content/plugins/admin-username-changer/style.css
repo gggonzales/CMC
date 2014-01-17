@@ -1,0 +1,67 @@
+#form{
+width: 210px;
+height: 80px;
+background-color: #ECECEC;
+font-size: 12px;
+margin-top: 20px;
+padding: 3px 8px;
+-webkit-border-radius: 11px;
+border-radius: 11px;
+
+}
+
+#username{
+
+font-size: 12px;
+
+padding: 3px 8px;
+
+-webkit-border-radius: 11px;
+border-radius: 11px;
+-moz-box-sizing: content-box;
+-webkit-box-sizing: content-box;
+box-sizing: content-box;
+
+text-shadow: rgba(255, 255, 255, 1) 0 1px 0;
+
+
+}
+
+#current{
+font-family: Arial;
+font-size: 12px;
+
+padding: 3px 8px;
+
+text-shadow: rgba(255, 255, 255, 1) 0 1px 0;
+
+
+}
+
+#status{
+
+width: 210px;
+height: 55px;
+background-color: #ECECEC;
+font-size: 12px;
+margin-top: 20px;
+padding: 3px 8px;
+-webkit-border-radius: 11px;
+border-radius: 11px;
+
+
+}
+
+#statusns{
+
+width: 210px;
+height: 55px;
+background-color: #ECECEC;
+font-size: 12px;
+margin-top: 20px;
+padding: 3px 8px;
+-webkit-border-radius: 11px;
+border-radius: 11px;
+
+
+}

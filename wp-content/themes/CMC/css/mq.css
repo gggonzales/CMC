@@ -1,0 +1,41 @@
+
+@media screen and (max-width: 600px) {
+
+#header { min-width: 600px;}
+.header_inner{width:600px; margin:0 auto;}
+.register_btn{ float: left;height: 32px;width: 104px;}
+
+#menu-header-home0 {
+	display: none;
+}
+
+.header_right { float: left; }
+
+.main_navigation { padding: 0px; }
+.main_navigation ul li { padding-left: 20px; }
+
+#menu-header-home { padding-top: 14px; padding-bottom: 14px; }
+
+.register_now_btn { position:absolute; right: 110px; top: 30px;}
+.social_icon { position:absolute; right: 0px; top: 30px;}
+
+.wraper{ min-width:600px;}
+.event_main_block { width: 312px; }
+
+.inner_image{ position:absolute; left:-550px; width:1920px;    }
+
+.tagline_main_block{ width:600px; text-align:center;}
+
+.tagline_main_block h1 {
+    font-size: 26px;
+}
+
+.banner_nav { left: 150px; top: -38px; }
+
+
+.footer_wraper{min-width:600px;}
+.footer_inner{width:600px;}
+
+.footer_inner_btm ul{float:left;}
+
+}

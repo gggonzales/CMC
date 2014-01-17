@@ -1,0 +1,211 @@
+#categoryFilters {
+	float: left;
+	width: 230px; /*Width of left column*/
+	padding-right: 20px;
+}
+
+#ticketSocketEvents {
+}
+
+#ticketSocketEvents.categoriesOn {
+	float: right;
+	width: 690px;
+}
+
+#ticketSocketEvents h2 a {
+	float: right;
+	text-transform: lowercase;
+	font-size: 12px;
+}
+
+#ticketSocketEvents.categoriesOn {
+}
+
+#ticket_event_sidebar{
+	width:218px;/*236*/
+	padding-left:18px;
+	padding-top:50px;
+	height:600px;
+	float:right;
+	background:url(images/bg_ticket_event_sidebar.png) no-repeat left 4px;
+}
+
+.title_ticket_event_sidebar,
+.title_ticket_event_content{
+	width:100%;
+	line-height:32px;
+	padding-bottom:21px;
+	font-weight:normal;
+	font-size:25px;
+	color:#006498;
+}
+
+.sideBar_logo_box{
+	width:200px;
+	padding:2px;
+	border:1px solid #dfdbdf;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	-o-border-radius:5px;
+	-ms-border-radius:5px;
+	background:white;
+}
+
+.sideBar_logo_box a{
+	display:block;
+}
+
+.event_user_utility_box{
+	width:100%;
+	height:38px;
+	
+}
+.event_user_utility_box_left{
+	width:225px;
+	height:100%;
+	float:left;
+	
+}
+.event_user_utility_box_right{
+	width:60%;
+	height:100%;
+	float:right;
+}
+.input_search_event{
+	width:70%;/*365*/
+	height:20px;/*32*/
+	line-height:20px;
+	padding:6px 10px;
+	font-size:13px;
+	color:#747474;
+	float:left;
+	border:1px solid #d2d2d2;
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 0%, #f5f5f5 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f5f5f5)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#f5f5f5 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 0%,#f5f5f5 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 0%,#f5f5f5 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ffffff 0%,#f5f5f5 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f5f5f5',GradientType=0 ); /* IE6-9 */
+
+}
+
+.event_row_container{
+	width:100%;
+	margin-top:17px;
+	border-top:1px dotted #aeaeae;
+}
+
+.event_single_row{
+	width:100%;
+	padding:17px 0;
+	overflow:hidden;
+	border-bottom:1px dotted #aeaeae;
+	position: relative;
+	top: 0px;
+	left: 0px;
+}
+.event_single_row h3,
+.event_single_row h3 a{
+	font-size:22px;
+	line-height:28px;
+	color:#666;
+	font-weight:normal;
+}
+.event_single_row h3 a:hover{
+	text-decoration:underline;
+}
+.event_single_row p{
+	font-size:14px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#999;
+	line-height:22px;
+}
+
+.event_single_row_left{
+	margin-right: 258px;
+	float:left;
+}
+.event_single_row_right{
+	width:258px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+.event_single_row_img_box{
+	width:139px;/*155*/
+	height:105px;/*121*/
+	padding:8px;
+	margin-right:15px;
+	border:1px solid #f4f4f4;
+	float:left;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	-o-border-radius:3px;
+	-ms-border-radius:3px;
+	  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.30);
+    -moz-box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.30);
+    -webkit-box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.30);
+	margin-left:10px;
+}
+
+.event_single_row_left h3 {
+	display: inline;
+	margin-top: 25px;
+}
+
+#ticketSocketEvents.categoriesOn .event_single_row .event_single_row_left h3,
+#ticketSocketEvents.categoriesOn .event_single_row .event_single_row_left h3 a {
+	font-size: 18px;
+}
+
+.event_single_row_left p {
+	margin-left: 164px; /* 139 + 15 + 8 + 2 */
+	display: block;
+	width: 100%;
+}
+
+#ticketSocketEvents.categoriesOn .event_single_row .event_single_row_left p {
+}
+
+.event_single_row_left h3 a {
+	text-decoration: none;
+}
+
+.event_single_row_right_day_box{
+	width:145px;
+	float:left;
+}
+
+.event_single_row_right_day_box h3 {
+	padding: 0px;
+	margin: 10px 0px 0px 0px;
+}
+
+.show_entry_box{
+	width:953px;
+	height:30px;
+	
+	margin:0 auto;
+	text-align:left;
+}
+.show_entry_box dl{
+	width:100%;
+	overflow:hidden;
+	font-size:13px;
+	color:#333;
+}
+.show_entry_box dt{
+	float:left;
+	line-height:14px;
+	margin-right:5px;
+	
+}
+.show_entry_box dd{
+	float:left;
+	margin-right:5px;
+}
