@@ -80,7 +80,7 @@ $image_url = wp_get_attachment_image_src($image_id, 'large', true);
   </div>
   <div class="clear"></div>
 </div>
-<div class="inner_mid" id="mid-active">
+<div class="inner_mid mid-active">
   <div class="inner_mid_inner">
     <div id="tabs">
       <?php
@@ -215,11 +215,6 @@ jQuery('.inner_mid_inner #tabs > div:first').show();
                         //alert(this.id);
                 
                         if(this.id==tab_id){
-							if(tab_id == "tab2"){
-								jQuery('#mid-active').addClass('mid-active');
-							}else{
-								jQuery('#mid-active').removeClass('mid-active');
-							}
                             jQuery('#'+tab_id).addClass('current');
                             jQuery('li#'+tab_id+"_star a").addClass('on');
                         }else{
