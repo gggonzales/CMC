@@ -28,44 +28,102 @@ get_header();
     
  </script>   
  <script type="text/javascript">
-		jQuery(document).ready(function() {
-            jQuery('#event_location_1').tooltipster({
-                content: jQuery("<h2>TRI-STATE MOUNTAIN ASSAULT '12</h2><p>Apr 12, 2014</p><p>Camelback Mountain, PA</p><a href='#' class='register_popup_btn'></a>"),
-				interactive:true
-            });			
-			jQuery('#event_location_2').tooltipster({
-                content: jQuery("<h2>Lorem Ipsum Dolor '13</h2><p>Apr 14, 2014</p><p>Angeles City, PA</p><a href='#' class='register_popup_btn'></a>"),
-				interactive:true
-            });			
-			jQuery('#event_location_3').tooltipster({
-                content: jQuery("<h2>The Examination License '13</h2><p>Apr 14, 2014</p><p>NJ, USA, PA</p><a href='#' class='register_popup_btn'></a>"),
-				interactive:true
-            });
-			jQuery('#event_location_4').tooltipster({
-                content: jQuery("<h2>The Examination License '13</h2><p>Apr 14, 2014</p><p>NJ, USA, PA</p><a href='#' class='register_popup_btn'></a>"),
-				interactive:true
-            });
-			jQuery('#event_location_5').tooltipster({
-                content: jQuery("<h2>The Examination License '13</h2><p>Apr 14, 2014</p><p>NJ, USA, PA</p><a href='#' class='register_popup_btn'></a>"),
-				interactive:true
-            });
-        });
+		jQuery(document).ready(function() {		
+			var ctr = 0;
+			jQuery('.marker').each(function(){
+				ctr = ctr + 1;
+				var marker_id = jQuery(this).attr('id');
+				var event_details = jQuery('#popup-details-'+ctr).html();
+				jQuery('#'+marker_id).tooltipster({
+					content: jQuery(event_details),
+					interactive:true
+				});	
+			});
+
+		});
+
 </script>
-<div class="banner_inner overviewimg height378">
-<div id="event_location_1" class="marker" style="right: 383px;top: 192px;"></div>
-<div id="event_location_2" class="marker" style="right: 265px;top: 187px;"></div>
-<div id="event_location_3" class="marker" style="right: 301px;top: 242px;"></div>
-<div id="event_location_4" class="marker" style="right: 231px;top: 227px;"></div>
-<div id="event_location_5" class="marker" style="right: 173px;top: 21px;"></div>
+<div class="banner_inner overviewimg height411 map_events">
+<div class="marker_wrapper">
+	<?php 
+	$args_upcoming=array(
+			'posts_per_page' => '100',
+			'post_type' => 'events'
+	);
+	function AIOThemes_joinPOSTMETA_to_WPQuery($join) {
+		global $wp_query, $wpdb;
+
+	   
+			$join .= "LEFT JOIN $wpdb->postmeta ON $wpdb->posts.ID = $wpdb->postmeta.post_id ";
+		
+		return $join;
+	}
+	function edit_posts_orderby($orderby_statement) {
+			$orderby_statement = "(DATE_FORMAT( STR_TO_DATE( meta_value,  '%Y-%m-%d %H:%i' ) ,  '%Y-%m-%d %H:%i' )) ASC";
+			return $orderby_statement;
+	}
+		   add_filter('posts_orderby', 'edit_posts_orderby'); 
+		   
+   /* add_filter( 'post_limits', 'my_post_limits' );
+	
+	function my_post_limits( $limit ) {
+		
+			return 'LIMIT 0, 1';
+	 
+	}   */
+	
+	add_filter('posts_join', 'AIOThemes_joinPOSTMETA_to_WPQuery', 10, 2);
+
+	add_filter( 'posts_where', 'my_posts_where_filter', 10, 2 );
+	
+	function my_posts_where_filter( $where_clause, $query_object ){
+
+		$where_clause .= " AND meta_key='event_datetime' AND date_format(str_to_date(meta_value, '%Y-%m-%d %H:%i'), '%Y-%m-%d %H:%i') > '" . date('Y-m-d H:i') . "'";
+		return $where_clause;
+	}
+
+	$upcoming= query_posts($args_upcoming);
+	//echo $GLOBALS['wp_query']->request;  
+   
+	 remove_filter( 'posts_where', 'my_posts_where_filter', 10, 2 );
+	 
+	//print_r($upcoming_events);
+	$ctr = 0;
+	foreach($upcoming as $event){
+		$values = get_post_custom( $event->ID );  
+		$map_area = nl2br($values['map_area'][0] );
+		$edate = isset( $values['event_datetime'] ) ? esc_attr( $values['event_datetime'][0] ) :'';
+		$edate = explode(' ',$edate);
+		$date_exp=explode('-',$edate[0]);
+		$unix=mktime(0, 0, 0, $date_exp[1],$date_exp[2],$date_exp[0]);
+		$rightCss = 0;
+		$topCss = 0;
+		if($map_area){
+			$map_area = split(',',$map_area);
+			$rightCss = $map_area[0];
+			$topCss = $map_area[1];
+		}
+		$ctr++;
+		echo '<div id="event_location_'.$ctr.'" class="marker" style="right: '.$rightCss.'px;top: '.$topCss.'px;"></div>';
+		echo "<div id='popup-details-$ctr' class='event-content-popup'><h2>".$event->post_title."</h2><p>".date("M d, Y",$unix)."</p><p>".nl2br($values['event_location'][0])."</p><a href='".get_permalink($event->ID)."' class='register_popup_btn'></a></div>";
+	}
+	?>
+
+
+	<!--<div id="event_location_1" class="marker" style="right: 260px;top: 210px;"></div>
+	<div id="event_location_2" class="marker" style="right: 248px;top: 286px;"></div>
+	<div id="event_location_3" class="marker" style="right: 165px;top: 208px;"></div>
+	<div id="event_location_4" class="marker" style="right: 165px;top: 248px;"></div>-->
+</div>
 <?php  
  
-$post_thumbnail_id = get_post_thumbnail_id( $post->ID );
-        $image_attributes = wp_get_attachment_image_src($post_thumbnail_id,'large');
+// $post_thumbnail_id = get_post_thumbnail_id( $post->ID );
+// $image_attributes = wp_get_attachment_image_src($post_thumbnail_id,'large');
 ?>
- <img src="<?php echo $image_attributes[0]; ?>" 
-              alt="<?php echo  (get_the_title()); ?>" 
-              title="<?php echo  (get_the_title()); ?>" 
-                 />
+ <!--<img src="<?php //echo $image_attributes[0]; ?>" 
+	  alt="<?php //echo  (get_the_title()); ?>" 
+	  title="<?php //echo  (get_the_title()); ?>" 
+		 />-->
  
   <div class="overviewimg_inner">
     <div class="breadcum"><a href="<?php echo home_url();?>">HOME</a> <span><?php the_title();?></span>
@@ -93,48 +151,8 @@ $post_thumbnail_id = get_post_thumbnail_id( $post->ID );
     </div>
        <div id="upcoming_events_div">
             <?php
-            $args_upcoming=array(
-                    'posts_per_page' => '100',
-                    'post_type' => 'events'
-            );
-            function AIOThemes_joinPOSTMETA_to_WPQuery($join) {
-                global $wp_query, $wpdb;
-
-               
-                    $join .= "LEFT JOIN $wpdb->postmeta ON $wpdb->posts.ID = $wpdb->postmeta.post_id ";
-                
-                return $join;
-            }
-            function edit_posts_orderby($orderby_statement) {
-                    $orderby_statement = "(DATE_FORMAT( STR_TO_DATE( meta_value,  '%Y-%m-%d %H:%i' ) ,  '%Y-%m-%d %H:%i' )) ASC";
-                    return $orderby_statement;
-            }
-                   add_filter('posts_orderby', 'edit_posts_orderby'); 
-                   
-           /* add_filter( 'post_limits', 'my_post_limits' );
             
-            function my_post_limits( $limit ) {
-                
-                    return 'LIMIT 0, 1';
-             
-            }   */
-            
-            add_filter('posts_join', 'AIOThemes_joinPOSTMETA_to_WPQuery', 10, 2);
-
-            add_filter( 'posts_where', 'my_posts_where_filter', 10, 2 );
-            
-            function my_posts_where_filter( $where_clause, $query_object ){
-
-                $where_clause .= " AND meta_key='event_datetime' AND date_format(str_to_date(meta_value, '%Y-%m-%d %H:%i'), '%Y-%m-%d %H:%i') > '" . date('Y-m-d H:i') . "'";
-                return $where_clause;
-            }
-
-            $upcoming= query_posts($args_upcoming);
-            //echo $GLOBALS['wp_query']->request;  
-           
-             remove_filter( 'posts_where', 'my_posts_where_filter', 10, 2 );
-             
-            
+			
             if ($upcoming ):
             ?> 
            <?php  
