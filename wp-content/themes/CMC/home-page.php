@@ -21,7 +21,14 @@ get_header();
 <div id="showcase" >
 <div id="quickNav">
   <div class="main" id="main_menu_nav" style="display:none;">
-    <a href="/about/"><div class="banner_nav navItems"></div></a>
+    <div class="banner_nav navItems mini_banner">
+		<div class="banner_content_wrapper">
+			<?php 
+				$page_data = get_page( 2 );
+				echo apply_filters('the_content',$page_data->post_content);
+			?>
+		</div>
+	</div>
   </div>
 </div>
     </div>

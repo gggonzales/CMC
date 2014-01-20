@@ -310,6 +310,6 @@ html {
 .marker{
 	background:url("../images/popup_map/marker_star.png") no-repeat;
 	width:33px;
-	height:31px;
+	height:32px;
 	cursor:pointer;
 }	

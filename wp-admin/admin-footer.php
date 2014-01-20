@@ -86,5 +86,39 @@ if ( function_exists('get_site_option') ) {
 
 <div class="clear"></div></div><!-- wpwrap -->
 <script type="text/javascript">if(typeof wpOnload=='function')wpOnload();</script>
+
+<script type="text/javascript">
+
+		jQuery(document).ready(function(){
+			
+			jQuery('#img_map').mousemove(function(e){
+				jQuery('#map-xy').show();
+				var parentOffset = jQuery(this).parent().offset();
+				var relativeXPosition = (e.pageX - (parentOffset.left)); //offset -> method allows you to retrieve the current position of an element 'relative' to the document
+				var relativeYPosition = (e.pageY - parentOffset.top);
+				jQuery('#map-xy').html("X: " + (554-relativeXPosition - 100 ) + " Y: " + parseInt(relativeYPosition-90)); 
+			});
+			jQuery('#img_map').on('click', function(e){
+				var parentOffset = jQuery(this).parent().offset();
+				var relativeXPosition = (e.pageX - parentOffset.left); //offset -> method allows you to retrieve the current position of an element 'relative' to the document
+				var relativeYPosition = (e.pageY - parentOffset.top);
+				jQuery('#cctmmap_area').val( (554-relativeXPosition) - 100 + "," +  parseInt(relativeYPosition-90)); 
+			});
+			
+		
+			jQuery('#btn_map_area').click(function(){
+				var viewBtn = jQuery(this).val();
+				if(viewBtn == "View Map"){
+					jQuery(this).val("Hide Map")
+					jQuery('#img_map').show(1000).delay(100);
+				}else{										
+					jQuery('#map-xy').hide(1000).delay(100);
+					jQuery(this).val("View Map")
+					jQuery('#img_map').hide(1000).delay(100);
+				}
+			});
+		});
+		jQuery('#custom_field_map_area #cctmmap_area').after('<input type="button" id="btn_map_area" value="View Map"/><div id="map-xy"></div><div id="img_map"></div>');
+</script>
 </body>
 </html>
