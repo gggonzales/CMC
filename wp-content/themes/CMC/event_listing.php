@@ -103,7 +103,7 @@ get_header();
 		}
 		$ctr++;
 		echo '<div id="event_location_'.$ctr.'" class="marker" style="right: '.$rightCss.'px;top: '.$topCss.'px;"></div>';
-		echo "<div id='popup-details-$ctr' class='event-content-popup'><h2>".$event->post_title."</h2><p>".date("M d, Y",$unix)."</p><p>".nl2br($values['event_location'][0])."</p><a href='".get_permalink($event->ID)."' class='register_popup_btn'></a></div>";
+		echo "<div id='popup-details-$ctr' class='event-content-popup'><h2>".$event->post_title."</h2><p>".date("M d, Y",$unix)."</p><p>".nl2br($values['event_location'][0])."</p><a href='http://www.eventbrite.com/event/".$values['eb_id'][0] ."' target='_blank' class='register_popup_btn'></a></div>";
 	}
 	?>
 
@@ -195,7 +195,7 @@ get_header();
           <?php  echo date("Y",$unix);?></a></h3>
       </div> 
       </div>
-      <div class="floatleft padt20"><a class="register_btn" href="<?php echo get_permalink($post->ID); ?>">Register</a></div>
+      <div class="floatleft padt20"><a class="register_btn" href="http://www.eventbrite.com/event/<?php echo $values['eb_id'][0]; ?>" target="_blank">Register</a></div>
       <div class="clear"></div>
     </div>
   <?php  
