@@ -11,13 +11,11 @@ get_header();
         jQuery("ul.eventlinks li").click(function(){
             var li_id=this.id;
             
-            jQuery("ul.eventlinks li").each(function(){
-              
+            jQuery("ul.eventlinks li").each(function(){              
                 jQuery("#"+this.id).attr('class','');
                  jQuery("#"+this.id+"_div").hide();
             });
-            
-            
+                        
             jQuery('#'+li_id).addClass('current');
             jQuery("#"+li_id+"_div").show();
         });
@@ -134,22 +132,38 @@ get_header();
 <div class="inner_mid mid-active">
   <div class="inner_mid_inner">
     <ul class="eventlinks">
+		<li id="prereg"><a href="javascript:void(0);">PREREGISTER</a></li>
         <li class="current" id="upcoming_events"><a href="javascript:void(0);">UPCOMING EVENTS</a></li>
         <li id="past_events"><a href="javascript:void(0);">PAST EVENTS</a></li>
     </ul>
-    <div class="event_list_heading">
-      <div class="course_block">
-        <h2>COURSE</h2>
-      </div>
-      <div class="location_block">
-        <h2>LOCATION</h2>
-      </div>
-      <div class="date_block">
-        <h2>DATE</h2>
-      </div>
-      <div class="clear"></div>
-    </div>
+	<div id="prereg_div" style="display: none;" >
+		<?php 
+			$slug_to_get = 'pre-register';
+			$args=array(
+			  'name' => $slug_to_get,
+			  'post_type' => 'post',
+			  'post_status' => 'publish',
+			  'showposts' => 1,
+			  'caller_get_posts'=> 1
+			);
+			$pagesObj = get_posts($args);		
+			echo apply_filters('the_content',$pagesObj[0]->post_content);
+		?>
+	</div>
        <div id="upcoming_events_div">
+		    <div class="event_list_heading upcoming_event_header">
+			  <div class="course_block">
+				<h2>COURSE</h2>
+			  </div>
+			  <div class="location_block">
+				<h2>LOCATION</h2>
+			  </div>
+			  <div class="date_block">
+				<h2>DATE</h2>
+			  </div>
+			  <div class="clear"></div>
+			</div>
+	   
             <?php
             
 			
@@ -194,6 +208,19 @@ get_header();
       
       
       <div id="past_events_div" style="display: none;">
+		    <div class="event_list_heading upcoming_event_header">
+			  <div class="course_block">
+				<h2>COURSE</h2>
+			  </div>
+			  <div class="location_block">
+				<h2>LOCATION</h2>
+			  </div>
+			  <div class="date_block">
+				<h2>DATE</h2>
+			  </div>
+			  <div class="clear"></div>
+			</div>
+	  
       <?php
 
             function edit_posts_orderby2($orderby_statement) {
@@ -259,7 +286,7 @@ get_header();
 	 wp_reset_query();
          ?> 
       </div> 
-	  <a href="#" class="load_more">
+	  <a href="#" class="load_more" style="display:none;">
 		<img src="<?php bloginfo('template_url') ?>/images/load_more_icon.jpg" alt="Load More" />
 	  </a>
   </div>

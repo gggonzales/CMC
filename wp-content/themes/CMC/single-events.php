@@ -553,14 +553,14 @@ jQuery(window).bind('resize',positionPopup);
             </ul>
             <div class="clear"></div>
         </div>
-        <div class="tab_block">
-            <div class="competition_<?php echo $tab; ?>"><img src="<?php bloginfo('template_url') ?>/images/tab_arrow.png" alt="" /></div>
-        </div>
+        <!--<div class="tab_block">
+            <div class="competition_<?php //echo $tab; ?>"><img src="<?php //bloginfo('template_url') ?>/images/tab_arrow.png" alt="" /></div>
+        </div>-->
     </div>
     <div class="clear"></div>
 </div>
-<div class="inner_mid">
-    <div id="signup_competition" style="display:<?php echo $div_compi; ?>;">
+<div class="inner_mid event_wrapper">
+    <div id="signup_competition" class="mid-active" style="display:<?php echo $div_compi; ?>;">
         <div style="visibility: hidden; height: 1px; width: 1px;" class="top_banner_competition"><?php echo $competition_header_image; ?></div> 
         <div class="event_list_heading" style="padding-top: 0px;">
             <div class="inner_mid_inner">
@@ -613,7 +613,7 @@ jQuery(window).bind('resize',positionPopup);
         
         <div class="clear"></div>
     </div>
-    <div id="signup_competition_map" style="display:<?php echo $div_map; ?>;">
+    <div id="signup_competition_map" class="mid-active" style="display:<?php echo $div_map; ?>;">
         <div style="visibility: hidden; height: 1px; width: 1px;" class="top_banner_competition_map"><?php echo $competition_map_header_image; ?></div> 
         <div class="inner_mid_inner">
             <div class="clear">
@@ -638,7 +638,7 @@ jQuery(window).bind('resize',positionPopup);
 
         </div>
     </div>
-    <div id="signup_travel_info" style="display:<?php echo $div_travel; ?>;">
+    <div id="signup_travel_info" class="mid-active" style="display:<?php echo $div_travel; ?>;">
         <div style="visibility: hidden; height: 1px; width: 1px;" class="top_banner_travel_info"><?php echo $travel_info_header_image; ?></div> 
 
         <div class="inner_mid_inner">
@@ -659,7 +659,7 @@ jQuery(window).bind('resize',positionPopup);
             <div class="clear"></div>
 
         </div> </div>
-    <div id="signup_raceday_info" style="display:<?php echo $div_race; ?>;">
+    <div id="signup_raceday_info" class="mid-active" style="display:<?php echo $div_race; ?>;">
         <div style="visibility: hidden; height: 1px; width: 1px;" class="top_banner_raceday_info"><?php echo $raceday_info_header_image; ?></div> 
         <div class="inner_mid_inner">
             <div class="clear">
@@ -680,7 +680,7 @@ jQuery(window).bind('resize',positionPopup);
             <div class="clear"></div>
 
         </div></div>
-    <div id="signup_media_results" style="display:<?php echo $div_media; ?>;">
+    <div id="signup_media_results" class="mid-active" style="display:<?php echo $div_media; ?>;">
         <div style="visibility: hidden; height: 1px; width: 1px;" class="top_banner_media_results"><?php echo $media_results_header_image; ?></div> 
         <div class="inner_mid_inner">
             

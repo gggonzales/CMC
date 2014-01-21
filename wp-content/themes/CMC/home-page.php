@@ -13,11 +13,11 @@ get_header();
 <link href="<?php bloginfo('template_url'); ?>/css/jquery.bxslider.css" rel="stylesheet" />
 <div class="wraper">
 <div class="banner_content" >
-<div class="video">
+<!--<div class="video">
 <a class="various iframe" rel="example_group" title="CMC Inspired" href="http://www.youtube.com/embed/Fs-0G1v04hs?fs=1&amp;autoplay=1&amp;rel=0"><img src="/wp-content/themes/CMC/images/video_box2.png" alt=""></a>
 <a class="various iframe" style="display:none;" rel="example_group" title="CMC Intrepid" href="http://www.youtube.com/embed/nd9joqFyLd0?fs=1&amp;autoplay=1&amp;rel=0"></a>
 <a class="various iframe" style="display:none;" rel="example_group" title="CMC 2013" href="http://www.youtube.com/embed/Fs-0G1v04hs?fs=1&amp;autoplay=1&amp;rel=0"></a>
-</div>
+</div>-->
 <div id="showcase" >
 <div id="quickNav">
   <div class="main" id="main_menu_nav" style="display:none;">

@@ -332,7 +332,7 @@ ul.eventlinks{padding:15px 15px 0 0;}
 ul.eventlinks li{float:left;padding:0 0 0 10px;}
 ul.eventlinks li a{text-decoration:none; font-size:16px;font-family: 'din_blackregular'; color:#7a7a7a; text-transform:uppercase; padding:3px 10px; display:block;}
 ul.eventlinks li a:hover,ul.eventlinks li.current a{ background:#ffaa00; color:#fff; border-radius:5px; -moz-border-radius:5px;-webkit-border-radius:5px;-moz-box-shadow:    inset 0 0 5px rgba(0,0,0,0.2); -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2); box-shadow:         inset 0 0 5px rgba(0,0,0,0.2);}
-.event_list_heading{clear:both; padding:0; background:url("../images/upcoming_table_header_bg.jpg") repeat-x scroll center center rgba(0, 0, 0, 0);}
+.event_list_heading{clear:both; padding:17px 0 10px; background:url(../images/bdr.jpg) repeat-x bottom;}
 .event_list_row{clear:both; padding:23px 0 18px; background:url(../images/bdr.jpg) repeat-x bottom;min-height:90px;}
 /*.event_list_row:hover{background:url(../images/list_select_bg.png) repeat-x;}*/
 .event_block1{float:left; width:174px;}
@@ -1203,6 +1203,16 @@ ul.eventlinks li#past_events a {
 	width:164px;
 }
 
+ul.eventlinks li#prereg a {
+    background-color:#222222;
+	border-radius: 5px;
+	color:#666666;
+	padding:5px 15px;
+	text-shadow:0 1px #000;
+	width:164px;
+}
+
+
 ul.eventlinks li.current a {
     background-color:#FFAA00 !important;
     border-radius: 5px;
@@ -1425,4 +1435,48 @@ a.play_btn:hover{
 
 .event-content-popup{
 	display:none;
+}
+
+.mini_banner .video_wrapper a{
+	background-color: #ccc;
+    display: block;
+    height: 126px;
+    width: 246px;
+}
+
+.mini_banner .video_wrapper a:hover img{
+	opacity:0.9;
+}
+
+.upcoming_event_header{
+	clear:both; 
+	padding:0; 
+	background:url("../images/upcoming_table_header_bg.jpg") repeat-x scroll center center rgba(0, 0, 0, 0);
+}
+.event_wrapper .mid-active{
+	padding-bottom:10px;
+	padding-top:10px;
+}
+
+.mid-active .ultimate_txt {
+    color: #FFFFFF !important;
+}
+
+.mid-active .inner_mid_inner{
+	padding-top:20px;
+}
+
+.event_wrapper{
+	padding-top:0;
+	padding-bottom:0;
+	margin-bottom:20px;
+}
+
+.awards_img {
+    color: #FFBF41;
+    text-shadow: 0 1px #444444 !important;
+}
+
+#prereg_div .event_list_heading{
+	background:none;
 }
