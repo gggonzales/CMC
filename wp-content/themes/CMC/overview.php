@@ -106,7 +106,7 @@ $image_url = wp_get_attachment_image_src($image_id, 'large', true);
 			<div class="challenge_category">
 			
 			<?php 
-					$args = array('numberposts' => '4', 'category_name' => 'pit' , 'orderby' => 'date', 'order'=>'ASC' );
+					$args = array('numberposts' => '4', 'category_name' => 'pit' , 'orderby' => 'date', 'order'=>'DESC' );
 					$pits = get_posts( $args );
 					?>
 				<ul class="category-tip">
