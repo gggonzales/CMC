@@ -41,6 +41,7 @@ get_header();
 		});
 
 </script>
+<div class="page-main-wrapper">
 <div class="banner_inner overviewimg height411 map_events">
 <div class="marker_wrapper">
 	<?php 
@@ -299,6 +300,6 @@ get_header();
 <noscript><iframe src='http://20542995p.rfihub.com/ca.html?rb=7571&ca=20542995&ra=' style='display:none;padding:0;margin:0' width='0' height='0'></iframe></noscript>
 <!-- End Rocket Fuel Conversion Action Tracking Code Version 7 -->
 </div>
-    
+</div>
     
     <?php get_footer(); ?>

@@ -328,7 +328,7 @@ a.cmc_logo{background:url(../images/cmc_logo.png) no-repeat; width:157px; height
 /*15March Add Css*/
 .height280{height:280px !important;}
 .width1024{width:1024px !important;}
-ul.eventlinks{padding:15px 15px 0 0;}
+ul.eventlinks{padding:15px 15px 0 0;float:right}
 ul.eventlinks li{float:left;padding:0 0 0 10px;}
 ul.eventlinks li a{text-decoration:none; font-size:16px;font-family: 'din_blackregular'; color:#7a7a7a; text-transform:uppercase; padding:3px 10px; display:block;}
 ul.eventlinks li a:hover,ul.eventlinks li.current a{ background:#ffaa00; color:#fff; border-radius:5px; -moz-border-radius:5px;-webkit-border-radius:5px;-moz-box-shadow:    inset 0 0 5px rgba(0,0,0,0.2); -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2); box-shadow:         inset 0 0 5px rgba(0,0,0,0.2);}
@@ -1196,7 +1196,7 @@ ul.category-tip  li > ul.category_content_2 {
 	color:#fff;
 }
 
-ul.eventlinks li#upcoming_events a {
+.page-main-wrapper  ul.eventlinks li#upcoming_events a {
     background-color:#222222;
 	border-radius: 5px;
 	color:#fff;
@@ -1205,7 +1205,7 @@ ul.eventlinks li#upcoming_events a {
 	width:164px;
 }
 
-ul.eventlinks li#past_events a {
+.page-main-wrapper ul.eventlinks li#past_events a {
     background-color:#222222;
 	border-radius: 5px;
 	color:#fff;
@@ -1214,7 +1214,7 @@ ul.eventlinks li#past_events a {
 	width:164px;
 }
 
-ul.eventlinks li#prereg a {
+.page-main-wrapper ul.eventlinks li#prereg a {
     background-color:#222222;
 	border-radius: 5px;
 	color:#fff;
@@ -1224,7 +1224,7 @@ ul.eventlinks li#prereg a {
 }
 
 
-ul.eventlinks li.current a {
+.page-main-wrapper ul.eventlinks li.current a {
     background-color:#FFAA00 !important;
     border-radius: 5px;
     color: #151515 !important;
@@ -1235,10 +1235,10 @@ ul.eventlinks li.current a {
 }
 
 
-ul.eventlinks li a{
+.page-main-wrapper ul.eventlinks li a{
 	text-align:center;
 }
-ul.eventlinks li a:hover{
+.page-main-wrapper ul.eventlinks li a:hover{
 	background: none repeat scroll 0 0 #FFAA00 !important;
     border-radius: 5px;
     color: #151515 !important;
@@ -1279,7 +1279,7 @@ ul.eventlinks li a:hover{
     width: 170px;
 }
 
-.padt20 {
+.page-main-wrapper .padt20 {
     float: right;
     padding-right: 20px;
     padding-top: 4px !important;
@@ -1315,7 +1315,7 @@ ul.eventlinks li a:hover{
 	text-transform:uppercase;
 }
 
-ul.eventlinks{
+.page-main-wrapper ul.eventlinks{
 	float:left;
 	margin-bottom:15px;
 }
