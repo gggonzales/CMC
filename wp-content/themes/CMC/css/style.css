@@ -1060,6 +1060,10 @@ ul.menu li:hover ul.sub-menu{ display: block;}
 	float:left;
 	cursor:pointer;
 }
+.pit_video_thumb a img{
+	
+}
+
 .clearboth{
 	clear:both;
 }
@@ -1420,7 +1424,7 @@ ul.eventlinks{
 
 .banner_nav p{
 	color:#fff;
-	text-align:left;
+	text-align:center;
 	font-weight:bold;
 	font-size:14px;
 	line-height:20px;
@@ -1430,7 +1434,7 @@ ul.eventlinks{
 
 .banner_nav h4{
 	color:#ffaa00 !important;	
-	text-align:left;
+	text-align:center;
 	text-shadow:0 1px #444 !important;
 	text-transform:uppercase;
 }
@@ -1461,10 +1465,10 @@ a.play_btn:hover{
 }
 
 .mini_banner .video_wrapper a{
-	background-color: #ccc;
+	/*background-color: #ccc;*/
     display: block;
     height: 126px;
-    width: 246px;
+    /*width: 246px;*/
 }
 
 .mini_banner .video_wrapper a:hover img{
