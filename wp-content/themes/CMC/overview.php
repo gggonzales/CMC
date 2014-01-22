@@ -120,7 +120,23 @@ $image_url = wp_get_attachment_image_src($image_id, 'large', true);
 					?>								
 				</ul>
 				<br class="clearboth"/>
+				<br class="clearboth"/>
+				<?php 
+				$slug_to_get = 'the-pit-in-5-points';
+				$args=array(
+				  'name' => $slug_to_get,
+				  'post_type' => 'post',
+				  'post_status' => 'publish',
+				  'showposts' => 1,
+				  'caller_get_posts'=> 1
+				);
+				$pagesObj_1 = get_posts($args);		
+				echo "<h1 class='post_title'>" . $pagesObj_1[0]->post_title . "</h1>";
+				echo apply_filters('the_content',$pagesObj_1[0]->post_content);
+				?>
+				
 			</div>
+			
 		<?php else: ?>
         <h1 class="strenth_star"><?php echo $pages[$i]->post_title; ?></h1>
         <?php
