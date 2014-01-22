@@ -85,6 +85,28 @@ if ( function_exists('get_site_option') ) {
 ?>
 
 <div class="clear"></div></div><!-- wpwrap -->
+<style>
+
+#btn_map_area{
+		cursor:pointer;
+}
+
+#img_map{
+	background: url("images/map_events_area.jpg") no-repeat scroll center center rgba(0, 0, 0, 0);
+    cursor: crosshair;
+    display: none;
+    height: 411px;
+    width: 554px;
+}
+#map-xy{
+	height:20px;
+	display:none;
+}
+#custom_field_map_area{
+	
+}
+</style>
+
 <script type="text/javascript">if(typeof wpOnload=='function')wpOnload();</script>
 
 <script type="text/javascript">
