@@ -60,7 +60,7 @@ if (trim($phase) != '') {
         $travel_info_header_image_id = get_post_meta($post->ID, 'signup_travel_info_header_image_id', true);
         $raceday_info_header_image_id = get_post_meta($post->ID, 'signup_raceday_info_header_image_id', true);
         $media_results_header_image_id = get_post_meta($post->ID, 'signup_media_results_header_image_id', true);
-
+        $eb_id = get_post_meta($post->ID, 'eb_id', true);
 
 
 //        $competition_header_image        = str_replace('.jpg', '-1128x286.jpg' , $competition_header_image);
@@ -143,7 +143,7 @@ if (trim($phase) != '') {
         $media_results_header_image_id = get_post_meta($post->ID, 'cpr_media_results_header_image_id', true);
 
         $show_default = get_post_meta($post->ID, 'cpr_show_default', true);
-
+        $eb_id = get_post_meta($post->ID, 'eb_id', true);
 
 //        $competition_header_image        = str_replace('.jpg', '-1128x286.jpg' , $competition_header_image);
 //        $competition_map_header_image    = str_replace('.jpg', '-1128x286.jpg' , $competition_map_header_image);
@@ -214,7 +214,7 @@ if (trim($phase) != '') {
         $travel_info_header_image_id = get_post_meta($post->ID, 'cpr2_travel_info_header_image_id', true);
         $raceday_info_header_image_id = get_post_meta($post->ID, 'cpr2_raceday_info_header_image_id', true);
         $media_results_header_image_id = get_post_meta($post->ID, 'cpr2_media_results_header_image_id', true);
-
+        $eb_id = get_post_meta($post->ID, 'eb_id', true);
         $show_default = get_post_meta($post->ID, 'cpr2_show_default', true);
 
 //        $competition_header_image        = str_replace('.jpg', '-1128x286.jpg' , $competition_header_image);
@@ -294,7 +294,7 @@ if (trim($phase) != '') {
     $travel_info_header_image_id = get_post_meta($post->ID, 'signup_travel_info_header_image_id', true);
     $raceday_info_header_image_id = get_post_meta($post->ID, 'signup_raceday_info_header_image_id', true);
     $media_results_header_image_id = get_post_meta($post->ID, 'signup_media_results_header_image_id', true);
-
+    $eb_id = get_post_meta($post->ID, 'eb_id', true);
     $show_default = get_post_meta($post->ID, 'signup_show_default', true);
 
 //        $competition_header_image        = str_replace('.jpg', '-1128x286.jpg' , $competition_header_image);
@@ -559,19 +559,21 @@ jQuery(window).bind('resize',positionPopup);
     </div>
     <div class="clear"></div>
 </div>
-<div class="inner_mid event_wrapper">
+<div class="inner_mid mid-active">
     <div id="signup_competition" class="mid-active" style="display:<?php echo $div_compi; ?>;">
         <div style="visibility: hidden; height: 1px; width: 1px;" class="top_banner_competition"><?php echo $competition_header_image; ?></div> 
         <div class="event_list_heading" style="padding-top: 0px;">
             <div class="inner_mid_inner">
                 <div class="clear">
                     <h1 class="strenth_star floatleft">Event OVERVIEW</h1>
-                    <div class="floatright">
-                        <?php if($eventtimestamp >= $todaytimestamp){ ?> 
-                        <a href="javascript:void(0);" class="register_big_btn"  ></a>  
-                        <?php }?> 
-                    </div>
-                    <div class="clear"></div>
+<div class="floatright">
+                        <?php if($eventtimestamp >= $todaytimestamp){ ?>
+                        <a target="_blank" href="http://www.eventbrite.com/event/<?php echo $eb_id ?>" class="register_big_btn"  ></a>
+                        <?php }?>
+                    </div>                
+
+
+    <div class="clear"></div>
                 </div>
                 <?php the_content($post->ID); ?>
             </div>
@@ -605,11 +607,9 @@ jQuery(window).bind('resize',positionPopup);
         }
         ?>
         
-        <div class="button_block">  <?php if($eventtimestamp >= $todaytimestamp){ ?> 
-                        <a href="javascript:void(0);" class="register_big_btn"  ></a>  
-                        <?php }?>
-<!--         <div class="top_div_ticketsocket"> <?php //echo do_shortcode(get_post_meta($post->ID, 'reg_url', true)); ?></div>-->
-    </div>
+        <div class="button_block"> <?php if($eventtimestamp >= $todaytimestamp){ ?>
+                        <a target="_blank" href="http://www.eventbrite.com/event/<?php echo $eb_id ?>" class="register_big_btn"  ></a>
+                        <?php }?> </div>
         
         <div class="clear"></div>
     </div>
@@ -618,22 +618,26 @@ jQuery(window).bind('resize',positionPopup);
         <div class="inner_mid_inner">
             <div class="clear">
                 <h1 class="strenth_star floatleft">Competition MAP</h1>
-                <div class="floatright">  <?php if($eventtimestamp >= $todaytimestamp){ ?> 
-                        <a href="javascript:void(0);" class="register_big_btn"  ></a>  
+                
+<div class="floatright">
+                        <?php if($eventtimestamp >= $todaytimestamp){ ?>
+                        <a target="_blank" href="http://www.eventbrite.com/event/<?php echo $eb_id ?>" class="register_big_btn"  ></a>
                         <?php }?>
-<!--                <div class="top_div_ticketsocket"> <?php //echo do_shortcode(get_post_meta($post->ID, 'reg_url', true)); ?></div>-->
-                </div>
-                <div class="clear"></div>
+                    </div>
+
+
+
+<div class="clear"></div>
             </div>
             <?php
             $content = apply_filters('the_content', $competition_map);
             echo $content = str_replace(']]>', ']]&gt;', $content);
             ?>
            <div class="button_block">  <?php if($eventtimestamp >= $todaytimestamp){ ?> 
-                        <a href="javascript:void(0);" class="register_big_btn"  ></a>  
-                        <?php }?>
-<!--            <div class="top_div_ticketsocket"> <?php //echo do_shortcode(get_post_meta($post->ID, 'reg_url', true)); ?></div>-->
-           </div>
+<a target="_blank" href="http://www.eventbrite.com/event/<?php echo $eb_id ?>" class="register_big_btn"  ></a>
+                        <?php }?>           
+
+</div>
             <div class="clear"></div>
 
         </div>
@@ -644,19 +648,26 @@ jQuery(window).bind('resize',positionPopup);
         <div class="inner_mid_inner">
             <div class="clear">
                 <h1 class="strenth_star floatleft">Travel INFO</h1>
-                <div class="floatright">  <?php if($eventtimestamp >= $todaytimestamp){ ?> 
-                        <a href="javascript:void(0);" class="register_big_btn"  ></a>  
+<div class="floatright">
+                        <?php if($eventtimestamp >= $todaytimestamp){ ?>
+                        <a target="_blank" href="http://www.eventbrite.com/event/<?php echo $eb_id ?>" class="register_big_btn"  ></a>
                         <?php }?>
-<!--                <div class="top_div_ticketsocket"> <?php //echo do_shortcode(get_post_meta($post->ID, 'reg_url', true)); ?></div>-->
-                </div>
-                <div class="clear"></div>
+                    </div>                
+
+
+
+<div class="clear"></div>
             </div>
             <?php echo $travel_info; ?>
-            <div class="button_block">  <?php if($eventtimestamp >= $todaytimestamp){ ?> 
-                        <a href="javascript:void(0);" class="register_big_btn"  ></a>  
+            
+ <div class="button_block">  <?php if($eventtimestamp >= $todaytimestamp){ ?>
+<a target="_blank" href="http://www.eventbrite.com/event/<?php echo $eb_id ?>" class="register_big_btn"  ></a>
                         <?php }?>
-<!--            <div class="top_div_ticketsocket"> <?php //echo do_shortcode(get_post_meta($post->ID, 'reg_url', true)); ?></div>--></div>
-            <div class="clear"></div>
+
+</div>
+
+
+<div class="clear"></div>
 
         </div> </div>
     <div id="signup_raceday_info" class="mid-active" style="display:<?php echo $div_race; ?>;">
@@ -664,19 +675,26 @@ jQuery(window).bind('resize',positionPopup);
         <div class="inner_mid_inner">
             <div class="clear">
                 <h1 class="strenth_star floatleft">Race Day INFO</h1>
-                <div class="floatright">  <?php if($eventtimestamp >= $todaytimestamp){ ?> 
-                        <a href="javascript:void(0);" class="register_big_btn"  ></a>  
+<div class="floatright">
+                        <?php if($eventtimestamp >= $todaytimestamp){ ?>
+                        <a target="_blank" href="http://www.eventbrite.com/event/<?php echo $eb_id ?>" class="register_big_btn"  ></a>
                         <?php }?>
-<!--                <div class="top_div_ticketsocket"> <?php //echo do_shortcode(get_post_meta($post->ID, 'reg_url', true)); ?></div>-->
-                </div>
-                <div class="clear"></div>
+                    </div>            
+
+
+
+    <div class="clear"></div>
             </div>
             <?php echo $raceday_info; ?>
-           <div class="button_block">  <?php if($eventtimestamp >= $todaytimestamp){ ?> 
-                        <a href="javascript:void(0);" class="register_big_btn"  ></a>  
+
+ <div class="button_block">  <?php if($eventtimestamp >= $todaytimestamp){ ?>
+<a target="_blank" href="http://www.eventbrite.com/event/<?php echo $eb_id ?>" class="register_big_btn"  ></a>
                         <?php }?>
-<!--            <div class="top_div_ticketsocket"> <?php //echo do_shortcode(get_post_meta($post->ID, 'reg_url', true)); ?></div>-->
-           </div>
+
+</div>
+
+
+
             <div class="clear"></div>
 
         </div></div>
