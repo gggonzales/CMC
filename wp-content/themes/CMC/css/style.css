@@ -1166,10 +1166,11 @@ ul.category-tip  li > ul.category_content_2 > li{
     font-size: 14px;
     font-weight: bold;
 	line-height:22px;
+	 margin: 8px 0;
 }
 ul.category-tip  li > ul.category_content_2 {
-	margin-top: 26px;
-    min-height: 135px;	
+	margin-top: 20px;
+    min-height: 148px;
 	text-shadow:1px 1px #444;
 }
 
