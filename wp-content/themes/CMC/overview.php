@@ -124,7 +124,7 @@ $image_url = wp_get_attachment_image_src($image_id, 'large', true);
 		<?php else: ?>
         <h1 class="strenth_star"><?php echo $pages[$i]->post_title; ?></h1>
         <?php
-                    echo "<br/><p>" . $pages[$i]->post_content."</p>";
+                    echo apply_filters('the_content',$pages[$i]->post_content);
 
                     if ($postid == 55) {
                         $terms = get_terms("pit_overview_category", array('orderby' => 'custom_sort', 'hide_empty' => 0, 'order' => 'ASC'));
