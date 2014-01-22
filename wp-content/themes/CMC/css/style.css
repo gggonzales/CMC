@@ -93,14 +93,14 @@ a.logo{background:url(../images/logo.png) no-repeat; width:204px; height:90px; d
 .social_icon a.twitter:hover{background-position:-15px bottom;}
 .social_icon a.linkedin{background:url(../images/social_icon.png) no-repeat -43px top; width:14px; height:15px; display:block; float:left; margin:0 0 0 7px;}
 .social_icon a.linkedin:hover{background-position:-43px bottom;}
-/*.register_btn{ background: url("../images/register_btn.png") no-repeat scroll 0 0 transparent; display: block;float: left;height: 32px;width: 104px;}*/
+.register_btn{ background: url("../images/register_btn.png") no-repeat scroll 0 0 transparent; display: block;float: left;height: 32px;width: 104px;}
  
 .register_btn:hover{background-position:left bottom;}
-/*
+
 .result_btn{ background: url("../images/result_btn.png") no-repeat scroll 0 0 transparent; display: block;float: left;height: 32px;width: 104px;}
  
 .result_btn:hover{background-position:left bottom;}
-*/
+
 
 .main_navigation{clear:both; padding:23px 0 0 0;padding:13px 0 0 0;}
 .main_navigation ul{float:right; z-index: 2002;}
@@ -255,7 +255,7 @@ a.cmc_logo{background:url(../images/cmc_logo.png) no-repeat; width:157px; height
 .inner_mid_inner a{color:#CB7A16;}
 .inner_mid_inner a:hover{text-decoration:none;}
 .inner_mid_inner h1{font-size:30px; text-transform:uppercase;font-family: 'din_blackregular'; padding:0 0 17px 0;}
-.inner_mid_inner p{font-size:14px;font-family: 'latoregular'; padding:0 0 18px 0; line-height:22px;}
+.inner_mid_inner p{font-size:16px;font-family: 'latoregular'; padding:0 0 18px 0; line-height:22px;}
 .inner_mid_inner p a{color:#c47617; text-decoration:none;}
 .inner_mid_inner p a:hover{text-decoration:none;}
 .overview_content{clear:both; padding:35px 0 0 0;}
@@ -1051,7 +1051,7 @@ ul.menu li:hover ul.sub-menu{ display: block;}
     width: 336px;
 }
 .pit_description p{
-	color:#ffbf41 !important;
+	color:#FFC651 !important;
 }
 .pit_video_thumb{
 	width:602px;
@@ -1072,12 +1072,17 @@ hr.line{
 }
 
 h1.post_title{
-	color:#ffbf41;
+	color:#FFC651;
 }
 
 .challenge_category{
 	width: 1020px;
 }
+
+.challenge_category .category-tip li > h3{
+	font-size:26px;
+}
+
 
 .category-tip{
 	
@@ -1088,6 +1093,7 @@ h1.post_title{
 
 .category-tip > li{
 	margin-left:-20px;
+	padding-top:16px !important;
 }
 .category-tip > li:first-child{
 	background: url("../images/tip_content_bg_1.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
@@ -1123,7 +1129,7 @@ h1.post_title{
 }
 
 .category-tip h3, .category-tip h2{
-	color:#ecb952;
+	color:#FFC651;
 	text-transform:uppercase;
 	text-align:center;
 	height:36px;
@@ -1156,7 +1162,7 @@ hr.category_line{
 }
 
 ul.category-tip  li > ul.category_content_2 > li{
-	color: #ecb952;
+	color: #FFC651;
     font-size: 14px;
     font-weight: bold;
 	line-height:22px;
@@ -1188,7 +1194,7 @@ ul.category-tip  li > ul.category_content_2 {
 ul.eventlinks li#upcoming_events a {
     background-color:#222222;
 	border-radius: 5px;
-	color:#666666;
+	color:#fff;
 	padding:5px 15px;
 	text-shadow:0 1px #000;
 	width:164px;
@@ -1197,7 +1203,7 @@ ul.eventlinks li#upcoming_events a {
 ul.eventlinks li#past_events a {
     background-color:#222222;
 	border-radius: 5px;
-	color:#666666;
+	color:#fff;
 	padding:5px 15px;
 	text-shadow:0 1px #000;
 	width:164px;
@@ -1206,7 +1212,7 @@ ul.eventlinks li#past_events a {
 ul.eventlinks li#prereg a {
     background-color:#222222;
 	border-radius: 5px;
-	color:#666666;
+	color:#fff;
 	padding:5px 15px;
 	text-shadow:0 1px #000;
 	width:164px;
@@ -1239,15 +1245,25 @@ ul.eventlinks li a:hover{
 
 
 .event_block1 h2, .date_block h2, .location_block h2, .course_block h2 {
-    color: #AAAAAA;
+    color: #fff;
     font-family: 'din_blackregular';
-    font-size: 14px;
+    font-size: 20px;
     font-weight: normal;
     margin-left: -15px;
     padding: 15px 0 16px 34px;
     text-transform: uppercase;
-	text-align:center;
+	text-align:left;
 }
+
+
+.location_block h2{
+	padding-left:19px;
+}
+
+.date_block h2{
+	padding-left:60px;
+}
+
 .course_block {
     width: 330px;
 }
@@ -1261,7 +1277,7 @@ ul.eventlinks li a:hover{
 .padt20 {
     float: right;
     padding-right: 20px;
-    padding-top: 8px !important;
+    padding-top: 4px !important;
 }
 
 
@@ -1273,11 +1289,13 @@ ul.eventlinks li a:hover{
     padding: 10px 5px;
 	width:100%;
 }
+
+
 .date_block h3{
 	text-align:center;
 }
 .event_list_row h3 a{
-	color:#aaa !important;
+	color:#fff !important;
 }
 
 .event_list_row {
@@ -1297,10 +1315,10 @@ ul.eventlinks{
 	margin-bottom:15px;
 }
 
-.register_btn, .result_btn{
+/*.register_btn, .result_btn{
 	text-transform:uppercase;
 	text-decoration:none;
-	color:#aaa !important;
+	color:#fff !important;
 	width:130px;
 	height:30px;
 	font-size:12px;
@@ -1318,7 +1336,11 @@ ul.eventlinks{
 	border:2px solid #ffaa00;
 	border-bottom:2px solid #ff8a00;
 }
+*/
 
+.register_btn,.result_btn{
+	color:transparent !important;
+}
 .event_list_row{
 	background:none;
 	border-bottom:1px solid #222;
@@ -1364,17 +1386,17 @@ ul.eventlinks{
 }
 
 .strenth_star{
-	color:#FFBF41;
+	color:#FFC651;
 	text-shadow:0 1px #444 !important;
 }
 
 #tabs h1{	
-	color:#FFBF41;
+	color:#FFC651;
 	text-shadow:0 1px #444 !important;
 }
 
 #tabs p{
-	color:#ccc;
+	color:#fff;
 }
 
 .banner_nav{
@@ -1473,7 +1495,7 @@ a.play_btn:hover{
 }
 
 .awards_img {
-    color: #FFBF41;
+    color: #FFC651;
     text-shadow: 0 1px #444444 !important;
 }
 
