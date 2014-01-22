@@ -1044,7 +1044,7 @@ ul.menu li:hover ul.sub-menu{ display: block;}
 }
 
 .pit_description{
-	background-image: url("../images/about_pit_bg.jpg");
+	/*background-image: url("../images/about_pit_bg.jpg");*/
     float: left;
     height: 203px;
     padding: 22px;
